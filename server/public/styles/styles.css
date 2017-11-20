@@ -1,7 +1,61 @@
 body {
-    background-color: pink;
+    background-color: gray;
+    font-family: monospace;
 }
 
-/* input {
-    width: 20px;
-} */
+h1 {
+    font-size: 40px;
+    margin: 40px;
+}
+
+#calculatorDiv {
+    border: 4px dotted black;
+    background-color: darkgray;
+    margin: 40px;
+    padding: 30px;
+    width: 200px;
+    height: 420px;
+    position: relative;
+
+}
+
+input {
+    width: 100px;
+    height: 50px;
+    font-size: 40px;
+    font-family: monospace;
+    color: lawngreen;
+    margin: 10px;
+}
+
+.mathButton {
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    margin: 10px;
+}
+
+#clearCalculator {
+    font-family: monospace;
+    width: 120px;
+    height: 40px;
+    font-size: 25px;
+    /* margin-top: 20px; */
+    margin-left: 10px;
+    position: absolute;
+    bottom: 30px;
+}
+
+#equalsDiv {
+    font-size: 40px;
+    font-family: monospace;
+    margin-left: 10px;
+}
+
+#equationResult {
+    font-size: 40px;
+    font-family: monospace;
+    margin-left: 10px;
+    color: lawngreen;
+}

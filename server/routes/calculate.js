@@ -1,17 +1,24 @@
 var express = require('express');
 var router = express.Router();
+var calculationArray = require('../modules/calculationArray');
+
 
 router.post ('/equation', function (req, res){
-    // if ($('.mathButton').id() == 'additionButton'){
-    //     console.log('add!');
+    calculationArray.push({ x: req.body.x, y: req.body.y, type: req.body.type});
     res.sendStatus(200);
-})
-    // quotesData.push({quoteText: req.body.equation_to_add});
+    })
     
 
 router.get ('/result', function (req, res){
-    console.log('router.get working');
+    // console.log('router.get working');
+    for (var i = 0; i < calculationArray.length; i++) {
+        return res.send(calculationArray[i]);
+    }
     
 })
+
+// router.delete ('/result', function (req, res){
+//     res.sendStatus(200);
+// })
 
 module.exports = router; //both a function and an object
