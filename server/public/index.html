@@ -13,12 +13,17 @@
     <h1>CALCUL8TOR</h1>
     <div id="calculatorDiv">
         <div><input id="digitOneInput" type="text"></div>
+        <!-- data-oper="add" is how ally did it, rather than value -->
         <div><button class = "mathButton" id="additionButton" value="add">+</button><button class = "mathButton" id="subtractionButton" value="subtract">-</button></div>
-        <div><button class = "mathButton" id="multiplicationButton" value="multipy">*</button><button class = "mathButton" id="divisionButton" value="divide">÷</button><div>
+        <div><button class = "mathButton" id="multiplicationButton" value="multiply">*</button><button class = "mathButton" id="divisionButton" value="divide">÷</button><div>
         <div><input id="digitTwoInput" type="text"></div>
         <div id="equalsDiv">=</div>
+        <!-- use a SPAN with an ID within a p tag to append just the span -->
         <div id="equationResult"></div>
         <div><button id="clearCalculator">CLEAR</button></div>
+    </div>
+    <!-- <div id="history">
+        <p>HISTORY:</p> -->
     </div>
 </body>
 </html>

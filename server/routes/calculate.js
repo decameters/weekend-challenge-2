@@ -2,24 +2,71 @@ var express = require('express');
 var router = express.Router();
 var calculationArray = require('../modules/calculationArray');
 
+var mathResult = 0;
+var mathOper;
+var historyArray = [];
+var mathHistory = {};
 
-router.post ('/equation', function (req, res){
-    calculationArray.push({ x: req.body.x, y: req.body.y, type: req.body.type});
-    res.sendStatus(200);
-    })
-    
+/* Ally made a global var called mathResult 
+in router.post
+var firstNum = parseInt(req.body.firstNum);
+var secondNum = parseInt(req.body.secondNum);
 
-router.get ('/result', function (req, res){
-    // console.log('router.get working');
-    for (var i = 0; i < calculationArray.length; i++) {
-        return res.send(calculationArray[i]);
+parseInt vs Number
+no decimal or decimal
+
+mathResult = firstNum + secondNumb;
+res.sendStatus(200);
+
+*/
+
+router.post ('/', function (req, res){
+    var firstNumber = Number(req.body.firstNumber);
+    var secondNumber = Number(req.body.secondNumber);
+
+    switch(req.body.operator) {
+        case 'add':
+            console.log('add!');
+            mathOper = '+';
+            mathResult = firstNumber + secondNumber;
+            break;
+        case 'subtract':
+            mathOper = '-';
+            mathResult = firstNumber - secondNumber;
+            break;
+        case 'multiply':
+            mathOper = '*';
+            mathResult = firstNumber * secondNumber;
+            break;
+        case 'divide':
+            mathOper = '÷';
+            mathResult = firstNumber / secondNumber;
+            break;
     }
-    
-})
 
-router.post ('/clear', function (req, res){
-    calculationArray = [];
+    mathHistory = {
+        first: firstNumber,
+        second: secondNumber,
+        oper: mathOper,
+        result: mathResult
+    }
+
+    historyArray.push(mathHistory);
+    // calculationArray.push({ x: req.body.x, y: req.body.y, type: req.body.type});
     res.sendStatus(200);
 })
+
+router.get ('/', function (req, res){
+    // console.log('router.get working');
+    res.send({result: mathResult, history: historyArray});
+    // for (var i = 0; i < calculationArray.length; i++) {
+    //     return res.send(calculationArray[i]);
+    })
+
+
+// router.post ('/clear', function (req, res){
+//     calculationArray = [];
+//     res.sendStatus(200);
+// })
 
 module.exports = router; //both a function and an object
