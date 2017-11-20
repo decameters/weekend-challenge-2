@@ -17,8 +17,9 @@ router.get ('/result', function (req, res){
     
 })
 
-// router.delete ('/result', function (req, res){
-//     res.sendStatus(200);
-// })
+router.post ('/clear', function (req, res){
+    calculationArray = [];
+    res.sendStatus(200);
+})
 
 module.exports = router; //both a function and an object

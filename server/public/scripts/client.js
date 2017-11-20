@@ -47,12 +47,12 @@ function resetGame() {
     $('#digitOneInput').val('');
     $('#digitTwoInput').val('');
     $('#equationResult').empty();
-    // $.ajax({
-    //     method: "DELETE",
-    //     url: '/calculate/result',
-    //     cache: false,
-    //     success: function (response) {
-    //         console.log('great');
-    //     }
-    // })
+    $.ajax({
+        method: "POST",
+        url: '/calculate/clear',
+        cache: false,
+        success: function (response) {
+            console.log('great');
+        }
+    })
 }
