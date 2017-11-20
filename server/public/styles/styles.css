@@ -14,7 +14,7 @@ h1 {
     margin: 40px;
     padding: 30px;
     width: 200px;
-    height: 420px;
+    /* height: 420px; */
     position: relative;
 
 }
@@ -41,10 +41,12 @@ input {
     width: 120px;
     height: 40px;
     font-size: 25px;
-    /* margin-top: 20px; */
+    margin-top: 50px;
     margin-left: 10px;
-    position: absolute;
-    bottom: 30px;
+    /* float: right;
+    margin-right; 10px; */
+    /* position: absolute;
+    bottom: 30px; */
 }
 
 #equalsDiv {
@@ -56,6 +58,11 @@ input {
 #equationResult {
     font-size: 40px;
     font-family: monospace;
+    margin-left: 10px;
+    color: lawngreen;
+}
+
+#history{
     margin-left: 10px;
     color: lawngreen;
 }

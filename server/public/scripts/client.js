@@ -72,16 +72,14 @@ function getEquationResponse() {
         success: function (response) {
             console.log('in getEquationResponse', response);
             $('#equationResult').html(response.result);
-            // console.log('equation result', response.type);
-            // if (response.type == 'add') {
-            //     $('#equationResult').html( Number(response.x) + Number(response.y) );
-            // } else if (response.type == 'subtract') {
-            //     $('#equationResult').html( Number(response.x) - Number(response.y) );                
-            // } else if (response.type == 'multipy') {
-            //     $('#equationResult').html( Number(response.x) * Number(response.y) );
-            // } else if (response.type == 'divide') {
-            //     $('#equationResult').html( Number(response.x) / Number(response.y) );
-            // }
+            $('#history').html('');
+            for (var i = 0; i < response.history.length; i++) {
+                $('#history').append('<p>' + response.history[i].first + 
+                ' ' + response.history[i].oper + ' ' +
+                response.history[i].second + ' = ' +
+                response.history[i].result + '</p>')
+                
+            }
         }    
 
         /* switch statement rather than if / else statement
