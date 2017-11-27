@@ -52,21 +52,12 @@ router.post ('/', function (req, res){
     }
 
     historyArray.push(mathHistory);
-    // calculationArray.push({ x: req.body.x, y: req.body.y, type: req.body.type});
     res.sendStatus(200);
 })
 
 router.get ('/', function (req, res){
     // console.log('router.get working');
     res.send({result: mathResult, history: historyArray});
-    // for (var i = 0; i < calculationArray.length; i++) {
-    //     return res.send(calculationArray[i]);
     })
-
-
-// router.post ('/clear', function (req, res){
-//     calculationArray = [];
-//     res.sendStatus(200);
-// })
 
 module.exports = router; //both a function and an object

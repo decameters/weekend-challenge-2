@@ -91,19 +91,3 @@ function getEquationResponse() {
 
     })
 }
-
-// function resetGame() {
-//     console.log('in resetGame');
-    
-//     $('#digitOneInput').val('');
-//     $('#digitTwoInput').val('');
-//     $('#equationResult').empty();
-//     $.ajax({
-//         method: "POST",
-//         url: '/calculate/clear',
-//         cache: false,
-//         success: function (response) {
-//             console.log('great');
-//         }
-//     })
-// }

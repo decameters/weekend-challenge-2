@@ -1,7 +1,7 @@
 var express = require('express'); // whatever express has in module.exports
 var bodyParser = require('body-parser');
 var app = express(); // an instance of an express web app
-var port = 5000;
+var port = process.env.PORT || 5000;
 var calculate = require('./routes/calculate')
 
 console.log('starting up the server');
